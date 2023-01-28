@@ -2,6 +2,7 @@
 using System.Collections;
 //using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float m_StartDelay = 3f;         
     public float m_EndDelay = 3f;           
     public CameraControl m_CameraControl;   
-    public Text m_MessageText;              
+    public TextMeshProUGUI m_MessageText;              
     public GameObject m_TankPrefab;         
     public TankManager[] m_Tanks;           
 
