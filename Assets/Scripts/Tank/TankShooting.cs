@@ -56,6 +56,10 @@ public class TankShooting : MonoBehaviour
         {
             m_Fired = false;
             m_CurrentLaunchForce = m_MinLaunchForce;
+
+            // set the audio source to the charging clip and play it
+            m_ShootingAudio.clip = m_ChargingClip;
+            m_ShootingAudio.Play();
         }
         // increase the launch force with according to the time the button is held and adjust the slider to show that
         else if (Input.GetButton(m_FireButton) && !m_Fired)
@@ -63,10 +67,6 @@ public class TankShooting : MonoBehaviour
             m_CurrentLaunchForce += m_ChargeSpeed * Time.deltaTime;
 
             m_AimSlider.value = m_CurrentLaunchForce;
-
-            // set the audio source to the charging clip and play it
-            m_ShootingAudio.clip = m_ChargingClip;
-            m_ShootingAudio.Play();
         }
         // launch the shell
         else if (Input.GetButtonUp(m_FireButton) && !m_Fired)

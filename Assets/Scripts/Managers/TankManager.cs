@@ -26,8 +26,10 @@ public class TankManager
         m_Movement.m_PlayerNumber = m_PlayerNumber;
         m_Shooting.m_PlayerNumber = m_PlayerNumber;
 
+        
         m_ColoredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(m_PlayerColor) + ">PLAYER " + m_PlayerNumber + "</color>";
 
+        // take the color of the tank and applied to the renderer
         MeshRenderer[] renderers = m_Instance.GetComponentsInChildren<MeshRenderer>();
 
         for (int i = 0; i < renderers.Length; i++)
@@ -55,6 +57,7 @@ public class TankManager
     }
 
 
+    // reset all tanks to the staring position
     public void Reset()
     {
         m_Instance.transform.position = m_SpawnPoint.position;
